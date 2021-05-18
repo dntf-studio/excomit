@@ -14,7 +14,7 @@ namespace excomit
     public partial class Form2 : Form
     {
         [DllImport("lib.dll")]
-        static extern int main();
+        static extern int write();
         public Form2()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace excomit
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            main();
+
         }
     }
 }

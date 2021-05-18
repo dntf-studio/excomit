@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace excomit
 {
     public partial class Form1 : Form
     {
+        [DllImport("lib.dll",CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
+        static extern int write(string str);
         public Form1()
         {
             InitializeComponent();
@@ -134,6 +137,8 @@ namespace excomit
                     try
                     {
                         init_grid(school, student);
+                        int gg = write(s.ToString());
+                        MessageBox.Show(gg.ToString());
                         checkout_form();
                     }
                     catch (Exception ex)

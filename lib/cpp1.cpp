@@ -1,8 +1,9 @@
+#include <iostream>
+#include <Windows.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include "h1.h"
 
-int main() {
-	FILE* fp;
-
+int write(const wchar_t* str) {
+	wprintf_s(L"%s", str);
+	return 0;
 }
