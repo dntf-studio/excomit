@@ -1,0 +1,10 @@
+E:\C#-apps\excomit\excomit\bin\Release\excomit.exe.config
+E:\C#-apps\excomit\excomit\bin\Release\excomit.exe
+E:\C#-apps\excomit\excomit\bin\Release\excomit.pdb
+E:\C#-apps\excomit\excomit\obj\Release\excomit.Form1.resources
+E:\C#-apps\excomit\excomit\obj\Release\excomit.Form2.resources
+E:\C#-apps\excomit\excomit\obj\Release\excomit.Properties.Resources.resources
+E:\C#-apps\excomit\excomit\obj\Release\excomit.csproj.GenerateResource.cache
+E:\C#-apps\excomit\excomit\obj\Release\excomit.csproj.CoreCompileInputs.cache
+E:\C#-apps\excomit\excomit\obj\Release\excomit.exe
+E:\C#-apps\excomit\excomit\obj\Release\excomit.pdb
