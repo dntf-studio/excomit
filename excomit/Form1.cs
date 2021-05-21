@@ -4,13 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Newtonsoft.Json;
 
 namespace excomit
 {
     public partial class Form1 : Form
     {
-        [DllImport("lib.dll",CallingConvention = CallingConvention.Cdecl,CharSet = CharSet.Unicode)]
-        static extern int write(string str);
         public Form1()
         {
             InitializeComponent();
@@ -102,6 +101,9 @@ namespace excomit
 
         private void init_grid(string[] str, List<List<string>> list)
         {
+            dataGridView1.ColumnCount = 2;
+            dataGridView1.Columns[0].HeaderText = "学校名";
+            dataGridView1.Columns[1].HeaderText = "生徒名";
             var index_a = 0;
             foreach (var i in list)
             {
@@ -137,13 +139,16 @@ namespace excomit
                     try
                     {
                         init_grid(school, student);
-                        int gg = write(s.ToString());
-                        MessageBox.Show(gg.ToString());
+                        for(var i = 0; i < student.Count; i++)
+                        {
+                            note_json(school[i],student[i]);
+                        }
+                        write_json();
                         checkout_form();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString(), "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(ex.Message, "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -174,5 +179,57 @@ namespace excomit
             }
         }
 
+        List<Data> datas = new List<Data>();
+        private void note_json(string str,List<string> list)
+        {
+            var data = new Data();
+            data.school = str;
+            data.names = list;
+            datas.Add(data); 
+        }
+
+        private void write_json()
+        {
+            string output = JsonConvert.SerializeObject(datas);
+            var path = @".\data.json";
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.Write(output);
+            }
+        }
+
+        private void ファイルToolStripMenuItem_Click(object sender, EventArgs e){}
+
+        private void 終了ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void 閉じるToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+        }
+
+        private void プレビューToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text != "" && textBox2.Text != "")
+            {
+                Form2 form2 = new Form2();
+                form2.Show();
+            }
+            else
+            {
+                MessageBox.Show("生徒のデータまたは学校のデータが欠如しています。","例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+
+    public class Data
+    {
+        public string school { get; set; }
+        public List<string> names { get; set; }
     }
 }

@@ -13,8 +13,6 @@ namespace excomit
 {
     public partial class Form2 : Form
     {
-        [DllImport("lib.dll")]
-        static extern int write();
         public Form2()
         {
             InitializeComponent();
