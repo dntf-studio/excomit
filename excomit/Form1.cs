@@ -17,6 +17,7 @@ namespace excomit
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Icon = new System.Drawing.Icon(@".\images\icon.ico");
             dataGridView1.ColumnCount = 2;
             dataGridView1.Columns[0].HeaderText = "学校名";
             dataGridView1.Columns[1].HeaderText = "生徒名";
@@ -223,6 +224,56 @@ namespace excomit
             else
             {
                 MessageBox.Show("生徒のデータまたは学校のデータが欠如しています。","例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void 名前を付けて保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sv = new SaveFileDialog();
+            sv.FileName = "新しいデータ.json";
+            sv.InitialDirectory = @"C:\";
+            sv.Filter = "JSONファイル(*.json)|*.json";
+            sv.Title = "名前を付けて保存する";
+
+            if (sv.ShowDialog() == DialogResult.OK)
+            {
+                string output = JsonConvert.SerializeObject(datas);
+                using (StreamWriter sw = new StreamWriter(sv.FileName))
+                {
+                    if(output != "[]")
+                    {
+                        sw.Write(output);
+                    }
+                    else
+                    {
+                        MessageBox.Show("データが内部に存在しません。", "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void csv表形式で保存するToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sv = new SaveFileDialog();
+            sv.FileName = "新しいデータ.csv";
+            sv.InitialDirectory = @"C:\";
+            sv.Filter = "CSVファイル(*.csv)|*.csv";
+            sv.Title = "名前を付けて保存する";
+
+            if (sv.ShowDialog() == DialogResult.OK)
+            {
+                string output = JsonConvert.SerializeObject(datas);
+                using (StreamWriter sw = new StreamWriter(sv.FileName))
+                {
+                    if(datas != null)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("データが内部に存在しません。", "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }

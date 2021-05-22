@@ -12,3 +12,5 @@ E:\C#-apps\excomit\excomit\obj\Debug\excomit.Form2.resources
 E:\C#-apps\excomit\excomit\bin\Debug\Newtonsoft.Json.dll
 E:\C#-apps\excomit\excomit\bin\Debug\Newtonsoft.Json.xml
 E:\C#-apps\excomit\excomit\obj\Debug\excomit.csproj.CopyComplete
+E:\C#-apps\excomit\excomit\bin\Debug\images\icon.ico
+E:\C#-apps\excomit\excomit\bin\Debug\images\アドレス帳のアイコン素材.png

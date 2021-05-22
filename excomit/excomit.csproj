@@ -98,5 +98,13 @@
     <Folder Include="data\" />
     <Folder Include="lib\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\アドレス帳のアイコン素材.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
