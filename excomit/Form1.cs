@@ -237,7 +237,7 @@ namespace excomit
 
             if (sv.ShowDialog() == DialogResult.OK)
             {
-                string output = JsonConvert.SerializeObject(datas);
+                string output = JsonConvert.SerializeObject(datas,Formatting.Indented);
                 using (StreamWriter sw = new StreamWriter(sv.FileName))
                 {
                     if(output != "[]")
@@ -246,7 +246,7 @@ namespace excomit
                     }
                     else
                     {
-                        MessageBox.Show("データが内部に存在しません。", "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("データが内部に存在しません。", "保存できませんでした", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -262,16 +262,22 @@ namespace excomit
 
             if (sv.ShowDialog() == DialogResult.OK)
             {
-                string output = JsonConvert.SerializeObject(datas);
+                var st = string.Empty;
                 using (StreamWriter sw = new StreamWriter(sv.FileName))
                 {
                     if(datas != null)
                     {
-
+                        foreach(var i in datas)
+                        {
+                            foreach(var j in i.names)
+                            {
+                                sw.WriteLine(i.school+","+j);
+                            }
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("データが内部に存在しません。", "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("データが内部に存在しません。", "保存できませんでした", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

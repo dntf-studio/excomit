@@ -40,9 +40,10 @@
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.名前を付けて保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.閉じるToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.プレビューToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.csv表形式で保存するToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.プレビューToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -130,7 +131,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ファイルToolStripMenuItem});
+            this.ファイルToolStripMenuItem,
+            this.表示ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -143,7 +145,6 @@
             this.csv表形式で保存するToolStripMenuItem,
             this.名前を付けて保存ToolStripMenuItem,
             this.閉じるToolStripMenuItem,
-            this.プレビューToolStripMenuItem,
             this.終了ToolStripMenuItem});
             this.ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
             this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
@@ -164,13 +165,6 @@
             this.閉じるToolStripMenuItem.Text = "閉じる";
             this.閉じるToolStripMenuItem.Click += new System.EventHandler(this.閉じるToolStripMenuItem_Click);
             // 
-            // プレビューToolStripMenuItem
-            // 
-            this.プレビューToolStripMenuItem.Name = "プレビューToolStripMenuItem";
-            this.プレビューToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.プレビューToolStripMenuItem.Text = "プレビュー";
-            this.プレビューToolStripMenuItem.Click += new System.EventHandler(this.プレビューToolStripMenuItem_Click);
-            // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
@@ -184,6 +178,21 @@
             this.csv表形式で保存するToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.csv表形式で保存するToolStripMenuItem.Text = "Csv(表)形式で保存";
             this.csv表形式で保存するToolStripMenuItem.Click += new System.EventHandler(this.csv表形式で保存するToolStripMenuItem_Click);
+            // 
+            // 表示ToolStripMenuItem
+            // 
+            this.表示ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.プレビューToolStripMenuItem1});
+            this.表示ToolStripMenuItem.Name = "表示ToolStripMenuItem";
+            this.表示ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.表示ToolStripMenuItem.Text = "表示";
+            // 
+            // プレビューToolStripMenuItem1
+            // 
+            this.プレビューToolStripMenuItem1.Name = "プレビューToolStripMenuItem1";
+            this.プレビューToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.プレビューToolStripMenuItem1.Text = "プレビュー";
+            this.プレビューToolStripMenuItem1.Click += new System.EventHandler(this.プレビューToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -224,9 +233,10 @@
         private System.Windows.Forms.ToolStripMenuItem ファイルToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 終了ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 閉じるToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem プレビューToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 名前を付けて保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem csv表形式で保存するToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 表示ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem プレビューToolStripMenuItem1;
     }
 }
 
