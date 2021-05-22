@@ -24,7 +24,7 @@
 
 3.`cd "(コピーしたパス)"`と入力(`""`は必須)、ダウンロードパスへ移動
 
-4.`call powershell -command "Expand-Archive -Force excomit-master.zip master"`で解凍、保存
+4.`call powershell -command "Expand-Archive -Force excomit-master.zip excomit"`で解凍、保存
 
 ##### または(gitインストール済みの場合)
 
