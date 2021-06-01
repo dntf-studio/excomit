@@ -1,0 +1,9 @@
+E:\C#-apps\excomit\cs1\bin\Debug\cs1.exe.config
+E:\C#-apps\excomit\cs1\bin\Debug\cs1.exe
+E:\C#-apps\excomit\cs1\bin\Debug\cs1.pdb
+E:\C#-apps\excomit\cs1\obj\Debug\cs1.csproj.CoreCompileInputs.cache
+E:\C#-apps\excomit\cs1\obj\Debug\cs1.exe
+E:\C#-apps\excomit\cs1\obj\Debug\cs1.pdb
+E:\C#-apps\excomit\cs1\bin\Debug\Newtonsoft.Json.dll
+E:\C#-apps\excomit\cs1\bin\Debug\Newtonsoft.Json.xml
+E:\C#-apps\excomit\cs1\obj\Debug\cs1.csproj.CopyComplete

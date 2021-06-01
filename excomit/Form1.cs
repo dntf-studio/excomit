@@ -5,9 +5,13 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace excomit
 {
+    /// <summary>
+    /// Made by dntf-studio @2021
+    /// </summary>
     public partial class Form1 : Form
     {
         public Form1()
@@ -254,6 +258,11 @@ namespace excomit
 
         private void csv表形式で保存するToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            dialog_write_csv();
+        }
+
+        private void dialog_write_csv()
+        {
             SaveFileDialog sv = new SaveFileDialog();
             sv.FileName = "新しいデータ.csv";
             sv.InitialDirectory = @"C:\";
@@ -265,13 +274,13 @@ namespace excomit
                 var st = string.Empty;
                 using (StreamWriter sw = new StreamWriter(sv.FileName))
                 {
-                    if(datas != null)
+                    if (datas != null)
                     {
-                        foreach(var i in datas)
+                        foreach (var i in datas)
                         {
-                            foreach(var j in i.names)
+                            foreach (var j in i.names)
                             {
-                                sw.WriteLine(i.school+","+j);
+                                sw.WriteLine(i.school + "," + j);
                             }
                         }
                     }
@@ -282,6 +291,58 @@ namespace excomit
                 }
             }
         }
+
+        public void write_csv(List<Data> d)
+        {
+            var ps = @".\.txt";
+            using (StreamWriter sw = new StreamWriter(ps))
+            {
+                if (d != null)
+                {
+                    foreach (var i in d)
+                    {
+                        foreach (var j in i.names)
+                        {
+                            sw.WriteLine(i.school + "," + j);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("データが内部に存在しません。", "保存できませんでした", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void リサルトログToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" && textBox2.Text != "")
+            {
+                if(datas != null)
+                {
+                    write_csv(datas);
+                    var p = new Process();
+                    p.StartInfo.FileName = "setgo.bat";
+                    p.StartInfo.Arguments = "-b";
+                    p.Start();
+
+                }
+                else { MessageBox.Show("生徒のデータまたは学校のデータが欠如しています。", "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            else
+            {
+                MessageBox.Show("生徒のデータまたは学校のデータが欠如しています。", "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void databasepyをコンパイルするToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //pyinstaller --onefile -w database.py
+            var p = new Process();
+            p.StartInfo.FileName = "setgo.bat";
+            p.StartInfo.Arguments = "-d";
+            p.Start();
+;        }
     }
 
     public class Data

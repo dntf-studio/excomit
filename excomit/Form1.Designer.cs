@@ -38,12 +38,15 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ファイルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.csv表形式で保存するToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.名前を付けて保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.閉じるToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.終了ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.csv表形式で保存するToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.表示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.プレビューToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.リサルトログToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.デバッグToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databasepyをコンパイルするToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -132,7 +135,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ファイルToolStripMenuItem,
-            this.表示ToolStripMenuItem});
+            this.表示ToolStripMenuItem,
+            this.デバッグToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -150,6 +154,13 @@
             this.ファイルToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ファイルToolStripMenuItem.Text = "ファイル";
             this.ファイルToolStripMenuItem.Click += new System.EventHandler(this.ファイルToolStripMenuItem_Click);
+            // 
+            // csv表形式で保存するToolStripMenuItem
+            // 
+            this.csv表形式で保存するToolStripMenuItem.Name = "csv表形式で保存するToolStripMenuItem";
+            this.csv表形式で保存するToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.csv表形式で保存するToolStripMenuItem.Text = "Csv(表)形式で保存";
+            this.csv表形式で保存するToolStripMenuItem.Click += new System.EventHandler(this.csv表形式で保存するToolStripMenuItem_Click);
             // 
             // 名前を付けて保存ToolStripMenuItem
             // 
@@ -172,17 +183,11 @@
             this.終了ToolStripMenuItem.Text = "終了";
             this.終了ToolStripMenuItem.Click += new System.EventHandler(this.終了ToolStripMenuItem_Click);
             // 
-            // csv表形式で保存するToolStripMenuItem
-            // 
-            this.csv表形式で保存するToolStripMenuItem.Name = "csv表形式で保存するToolStripMenuItem";
-            this.csv表形式で保存するToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.csv表形式で保存するToolStripMenuItem.Text = "Csv(表)形式で保存";
-            this.csv表形式で保存するToolStripMenuItem.Click += new System.EventHandler(this.csv表形式で保存するToolStripMenuItem_Click);
-            // 
             // 表示ToolStripMenuItem
             // 
             this.表示ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.プレビューToolStripMenuItem1});
+            this.プレビューToolStripMenuItem1,
+            this.リサルトログToolStripMenuItem});
             this.表示ToolStripMenuItem.Name = "表示ToolStripMenuItem";
             this.表示ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.表示ToolStripMenuItem.Text = "表示";
@@ -193,6 +198,28 @@
             this.プレビューToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.プレビューToolStripMenuItem1.Text = "プレビュー";
             this.プレビューToolStripMenuItem1.Click += new System.EventHandler(this.プレビューToolStripMenuItem_Click);
+            // 
+            // リサルトログToolStripMenuItem
+            // 
+            this.リサルトログToolStripMenuItem.Name = "リサルトログToolStripMenuItem";
+            this.リサルトログToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.リサルトログToolStripMenuItem.Text = "リサルトログ";
+            this.リサルトログToolStripMenuItem.Click += new System.EventHandler(this.リサルトログToolStripMenuItem_Click);
+            // 
+            // デバッグToolStripMenuItem
+            // 
+            this.デバッグToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databasepyをコンパイルするToolStripMenuItem});
+            this.デバッグToolStripMenuItem.Name = "デバッグToolStripMenuItem";
+            this.デバッグToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.デバッグToolStripMenuItem.Text = "デバッグ";
+            // 
+            // databasepyをコンパイルするToolStripMenuItem
+            // 
+            this.databasepyをコンパイルするToolStripMenuItem.Name = "databasepyをコンパイルするToolStripMenuItem";
+            this.databasepyをコンパイルするToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.databasepyをコンパイルするToolStripMenuItem.Text = "reader.goをデバッグする";
+            this.databasepyをコンパイルするToolStripMenuItem.Click += new System.EventHandler(this.databasepyをコンパイルするToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -237,6 +264,9 @@
         private System.Windows.Forms.ToolStripMenuItem csv表形式で保存するToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 表示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem プレビューToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem リサルトログToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem デバッグToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem databasepyをコンパイルするToolStripMenuItem;
     }
 }
 
