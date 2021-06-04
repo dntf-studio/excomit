@@ -292,9 +292,9 @@ namespace excomit
             }
         }
 
-        public void write_csv(List<Data> d)
+        public void write_csv(List<Data> d,string name)
         {
-            var ps = @".\.txt";
+            var ps = @".\"+name;
             using (StreamWriter sw = new StreamWriter(ps))
             {
                 if (d != null)
@@ -320,10 +320,9 @@ namespace excomit
             {
                 if(datas != null)
                 {
-                    write_csv(datas);
+                    write_csv(datas,".txt");
                     var p = new Process();
-                    p.StartInfo.FileName = "setgo.bat";
-                    p.StartInfo.Arguments = "-b";
+                    p.StartInfo.FileName = "reader.exe";
                     p.Start();
 
                 }

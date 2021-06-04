@@ -158,28 +158,28 @@
             // csv表形式で保存するToolStripMenuItem
             // 
             this.csv表形式で保存するToolStripMenuItem.Name = "csv表形式で保存するToolStripMenuItem";
-            this.csv表形式で保存するToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.csv表形式で保存するToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.csv表形式で保存するToolStripMenuItem.Text = "Csv(表)形式で保存";
             this.csv表形式で保存するToolStripMenuItem.Click += new System.EventHandler(this.csv表形式で保存するToolStripMenuItem_Click);
             // 
             // 名前を付けて保存ToolStripMenuItem
             // 
             this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
-            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.名前を付けて保存ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.名前を付けて保存ToolStripMenuItem.Text = "Json形式で保存";
             this.名前を付けて保存ToolStripMenuItem.Click += new System.EventHandler(this.名前を付けて保存ToolStripMenuItem_Click);
             // 
             // 閉じるToolStripMenuItem
             // 
             this.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem";
-            this.閉じるToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.閉じるToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.閉じるToolStripMenuItem.Text = "閉じる";
             this.閉じるToolStripMenuItem.Click += new System.EventHandler(this.閉じるToolStripMenuItem_Click);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.終了ToolStripMenuItem.Text = "終了";
             this.終了ToolStripMenuItem.Click += new System.EventHandler(this.終了ToolStripMenuItem_Click);
             // 
@@ -195,14 +195,14 @@
             // プレビューToolStripMenuItem1
             // 
             this.プレビューToolStripMenuItem1.Name = "プレビューToolStripMenuItem1";
-            this.プレビューToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.プレビューToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.プレビューToolStripMenuItem1.Text = "プレビュー";
             this.プレビューToolStripMenuItem1.Click += new System.EventHandler(this.プレビューToolStripMenuItem_Click);
             // 
             // リサルトログToolStripMenuItem
             // 
             this.リサルトログToolStripMenuItem.Name = "リサルトログToolStripMenuItem";
-            this.リサルトログToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.リサルトログToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.リサルトログToolStripMenuItem.Text = "リサルトログ";
             this.リサルトログToolStripMenuItem.Click += new System.EventHandler(this.リサルトログToolStripMenuItem_Click);
             // 

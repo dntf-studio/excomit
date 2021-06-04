@@ -25,6 +25,8 @@ namespace excomit
             load_json();
             add_components();
         }
+        Form1 f1 = new Form1();
+
         List<Data> datas = new List<Data>();
 
         private void load_json()
@@ -53,6 +55,64 @@ namespace excomit
                     comboBox2.Items.AddRange(i.names.ToArray());
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedItem != null && comboBox2.SelectedItem != null)
+            {
+                var i = comboBox1.SelectedItem.ToString();
+                var j = comboBox2.SelectedItem.ToString();
+                MessageBox.Show("登録されました\n高校:"+i+"\n氏名:"+j);
+                comboBox2.Items.Remove(j);
+                if(comboBox1.Items.Count <= 0)
+                {
+                    comboBox1.Items.Remove(i);
+                }
+                datas = RemoveData(i, j, datas);
+                f1.write_csv(datas,"note.txt");
+            }
+            else
+            {
+                MessageBox.Show("学校または名前が選択されていません", "例外処理", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+        }
+
+        public List<Data> RemoveData(string sch,string name,List<Data> list)
+        {
+            var data = new List<Data>();
+            for(var i = 0; i < list.Count; i++)
+            {
+                if(list[i].school == sch)
+                {
+                    var b = list[i].names.Count <= 0;
+                    if (!b)
+                    {
+                        Data d = new Data();
+                        d.school = list[i].school;
+                        var l = new List<string>();
+                        foreach (var j in list[i].names)
+                        {
+                            if (j != name)
+                            {
+                                l.Add(j);
+                            }
+                        }
+                        d.names = l;
+                        data.Add(d);
+                    }
+                }
+                else
+                {
+                    Data d = new Data();
+                    d.school = list[i].school;
+                    d.names = list[i].names;
+                    data.Add(d);
+                }
+            }
+            return data;
         }
     }
 }

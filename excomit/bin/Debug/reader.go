@@ -10,32 +10,33 @@ import (
 	"github.com/fatih/color"
 )
 
+/*
+Code by dntf-studio @2021
+*/
+
 func main() {
 
-reload:
 	var list []string
 	list, err := read(".txt")
 	if err != nil {
 		fmt.Println("Eorror was detected")
 		os.Exit(1)
 	}
+	write(list)
+	ff := false
 
-	w1 := color.New(color.FgHiGreen)
-	w2 := color.New(color.FgHiYellow, color.Underline)
-	for i, v := range list {
-		comm := strings.Split(v, ",")
-		if i == 0 {
-			w1.Println("_________________________________")
-			w1.Println("| ", i, "  ", comm[0], "  ", comm[1])
-		} else if i < 10 {
-			w1.Println("| ", i, "  ", comm[0], "  ", comm[1])
-		} else {
-			w1.Println("|", i, "  ", comm[0], "  ", comm[1])
-		}
+reload:
+
+	var lis_t []string
+	lis_t, errr := read("note.txt")
+	if errr != nil {
+		fmt.Println("Eorror was detected")
+		os.Exit(1)
 	}
-	w2.Println("\n               $$残り人数: ", len(list), "人$$              ")
-	w1.Add(color.Underline)
-	w1.Print("\n>>")
+	if ff {
+		write(lis_t)
+	}
+
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	str := scanner.Text()
@@ -47,9 +48,29 @@ reload:
 		confilm()
 	} else {
 		if s == "r" {
+			ff = true
 			goto reload
 		}
 	}
+}
+
+func write(l []string) {
+	w1 := color.New(color.FgHiGreen)
+	w2 := color.New(color.FgHiYellow, color.Underline)
+	for i, v := range l {
+		comm := strings.Split(v, ",")
+		if i == 0 {
+			w1.Println("_________________________________")
+			w1.Println("| ", i, "  ", comm[0], "  ", comm[1])
+		} else if i < 10 {
+			w1.Println("| ", i, "  ", comm[0], "  ", comm[1])
+		} else {
+			w1.Println("|", i, "  ", comm[0], "  ", comm[1])
+		}
+	}
+	w2.Println("\n               $$残り人数: ", len(l), "人$$              ")
+	w1.Add(color.Underline)
+	w1.Print("\n>>")
 }
 
 func judgeman(s string) (string, error) {
