@@ -12,6 +12,8 @@ import (
 
 /*
 Code by dntf-studio @2021
+
+source : https://github.com/dntf-studio/excomit/blob/master/excomit/bin/Debug/reader.go
 */
 
 func main() {
@@ -37,6 +39,8 @@ reload:
 		write(lis_t)
 	}
 
+scan:
+
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	str := scanner.Text()
@@ -50,8 +54,32 @@ reload:
 		if s == "r" {
 			ff = true
 			goto reload
+		} else if s == "h" {
+			help()
+			goto scan
+		} else if s == "v" {
+			info()
+			goto scan
 		}
 	}
+}
+
+func info() {
+	w := color.New(color.FgHiGreen, color.Underline)
+	fmt.Println("v.0.9.1.a :")
+	fmt.Println("	excomit is opensource softwere && made by dntf-studio @2021")
+	fmt.Println("	repository: https://github.com/dntf-studio/excomit")
+	fmt.Println("	this app(Go) source: https://github.com/dntf-studio/excomit/blob/master/excomit/bin/Debug/reader.go")
+	w.Print("\n>>")
+}
+
+func help() {
+	w := color.New(color.FgHiGreen, color.Underline)
+	fmt.Println("commands:")
+	fmt.Println("	'r' = reload page with new data")
+	fmt.Println("	'h' = help")
+	fmt.Println("	'v' = about this app")
+	w.Print("\n>>")
 }
 
 func write(l []string) {
@@ -76,6 +104,10 @@ func write(l []string) {
 func judgeman(s string) (string, error) {
 	if strings.ToLower(s) == "r" {
 		return "r", nil
+	} else if strings.ToLower(s) == "h" {
+		return "h", nil
+	} else if strings.ToLower(s) == "v" {
+		return "v", nil
 	} else {
 		err := errors.New("incorrect command")
 		return "", err

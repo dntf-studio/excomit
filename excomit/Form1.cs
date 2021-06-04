@@ -342,6 +342,11 @@ namespace excomit
             p.StartInfo.Arguments = "-d";
             p.Start();
 ;        }
+
+        private void バージョンToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("v.0.9.1.a\nGit: https://github.com/dntf-studio/excomit", "バージョン情報", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 
     public class Data
