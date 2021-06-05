@@ -322,7 +322,7 @@ namespace excomit
                 {
                     write_csv(datas,".txt");
                     var p = new Process();
-                    p.StartInfo.FileName = "reader.exe";
+                    p.StartInfo.FileName = "gophine.exe";
                     p.Start();
 
                 }
